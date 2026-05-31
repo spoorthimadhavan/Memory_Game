@@ -1,6 +1,5 @@
 from fastapi import APIRouter, Depends
 
-from app.core.exceptions import GameException
 from app.schemas.action import ActionHistoryItem, PlayerActionRequest, PlayerActionResponse
 from app.schemas.game import GameSessionResponse, GameStartRequest, GameStartResponse
 from app.services.game_service import GameService

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import pandas as pd
@@ -139,5 +139,5 @@ class SessionRepository:
       score=score,
       enemy_health_after=enemy_health_after,
       is_repeated=is_repeated,
-      timestamp=datetime.now(timezone.utc).isoformat(),
+      timestamp=datetime.now(UTC).isoformat(),
     )

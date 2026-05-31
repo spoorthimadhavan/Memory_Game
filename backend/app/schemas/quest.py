@@ -31,7 +31,7 @@ class QuestStartResponse(BaseModel):
 
 class QuestSessionResponse(BaseModel):
   quest_state: QuestState
-  history: list["AnswerHistoryItem"] = Field(default_factory=list)
+  history: list[AnswerHistoryItem] = Field(default_factory=list)
 
 
 class AnswerHistoryItem(BaseModel):

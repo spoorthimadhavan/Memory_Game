@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from app.repositories.session_repository import SessionRepository
 from app.schemas.action import PlayerActionRequest, PlayerActionResponse
-from app.schemas.game import GameStartRequest, GameStartResponse, GameSessionResponse
+from app.schemas.game import GameSessionResponse, GameStartRequest, GameStartResponse
 from app.workflows.game_graph import GameWorkflow
 
 

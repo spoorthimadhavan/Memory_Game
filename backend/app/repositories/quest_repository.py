@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import pandas as pd
@@ -140,5 +140,5 @@ class QuestRepository:
       score=score,
       quality=quality,
       level=level,
-      timestamp=datetime.now(timezone.utc).isoformat(),
+      timestamp=datetime.now(UTC).isoformat(),
     )

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import csv
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from fastapi import APIRouter
@@ -27,7 +27,7 @@ def submit_contact(request: ContactRequest):
   _append_csv(
     feedback_repo.CONTACT_CSV,
     {
-      "timestamp": datetime.now(timezone.utc).isoformat(),
+      "timestamp": datetime.now(UTC).isoformat(),
       "name": request.name,
       "email": str(request.email),
       "message": request.message,
@@ -42,7 +42,7 @@ def submit_suggestion(request: SuggestionRequest):
   _append_csv(
     feedback_repo.SUGGESTION_CSV,
     {
-      "timestamp": datetime.now(timezone.utc).isoformat(),
+      "timestamp": datetime.now(UTC).isoformat(),
       "name": request.name,
       "email": str(request.email or ""),
       "suggestion": request.suggestion,
