@@ -1,0 +1,72 @@
+{
+  "python": [
+    {
+      "mission_title": "Lists & comprehension",
+      "text": "What is a list comprehension in Python and when would you use one?",
+      "expected_concepts": ["list comprehension", "iterate", "concise", "filter", "transform"],
+      "hint": "Think about building a new list in one line."
+    },
+    {
+      "mission_title": "Virtual environments",
+      "text": "Why do developers use virtual environments (venv) in Python projects?",
+      "expected_concepts": ["dependencies", "isolated", "versions", "reproducible", "packages"],
+      "hint": "Consider conflicting package versions across projects."
+    }
+  ],
+  "angular": [
+    {
+      "mission_title": "Signals",
+      "text": "What are Angular signals and how do they differ from traditional change detection?",
+      "expected_concepts": ["signals", "reactive", "fine-grained", "computed", "change detection"],
+      "hint": "Mention reactive updates and derived state."
+    },
+    {
+      "mission_title": "Standalone components",
+      "text": "What is a standalone component in Angular and why is it useful?",
+      "expected_concepts": ["standalone", "imports", "NgModule", "bootstrap", "simpler"],
+      "hint": "Think about reducing module boilerplate."
+    }
+  ],
+  "ai": [
+    {
+      "mission_title": "RAG basics",
+      "text": "Explain Retrieval-Augmented Generation (RAG) in simple terms.",
+      "expected_concepts": ["retrieve", "documents", "context", "LLM", "grounding", "embeddings"],
+      "hint": "Combine search with generation."
+    },
+    {
+      "mission_title": "LangSmith",
+      "text": "Why is observability important when shipping LLM features to production?",
+      "expected_concepts": ["tracing", "latency", "cost", "quality", "debug", "monitoring"],
+      "hint": "Mention traces, failures, and evaluation."
+    }
+  ],
+  "cloud": [
+    {
+      "mission_title": "Containers",
+      "text": "What problem does Docker solve in application deployment?",
+      "expected_concepts": ["container", "consistent", "environment", "isolated", "portable"],
+      "hint": "Think 'works on my machine'."
+    },
+    {
+      "mission_title": "CI/CD",
+      "text": "What is the purpose of a CI/CD pipeline?",
+      "expected_concepts": ["automate", "test", "build", "deploy", "quality", "feedback"],
+      "hint": "Mention automated tests before release."
+    }
+  ],
+  "german": [
+    {
+      "mission_title": "Greetings",
+      "text": "How do you say 'Good morning' in German and when is it used?",
+      "expected_concepts": ["Guten Morgen", "morning", "formal", "greeting"],
+      "hint": "Two words, starts with Guten..."
+    },
+    {
+      "mission_title": "Politeness",
+      "text": "What does 'Bitte' mean and give two situations where you would use it.",
+      "expected_concepts": ["please", "you're welcome", "request", "polite"],
+      "hint": "It can mean please or you're welcome."
+    }
+  ]
+}

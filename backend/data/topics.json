@@ -1,0 +1,27 @@
+[
+  {
+    "id": "python",
+    "label": "Python",
+    "description": "Core syntax, data structures, and idioms"
+  },
+  {
+    "id": "angular",
+    "label": "Angular",
+    "description": "Components, signals, routing, and forms"
+  },
+  {
+    "id": "ai",
+    "label": "AI & LLMs",
+    "description": "Prompting, RAG, agents, and evaluation"
+  },
+  {
+    "id": "cloud",
+    "label": "Cloud & DevOps",
+    "description": "Docker, CI/CD, deployment, observability"
+  },
+  {
+    "id": "german",
+    "label": "German vocabulary",
+    "description": "Everyday words and short phrases"
+  }
+]

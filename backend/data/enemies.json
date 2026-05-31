@@ -1,0 +1,26 @@
+[
+  {
+    "id": "goblin-scout",
+    "name": "Goblin Scout",
+    "max_health": 100,
+    "difficulty": 1.0,
+    "description": "A sneaky goblin with a rusty dagger.",
+    "weaknesses": ["smoke", "trick", "surprise"]
+  },
+  {
+    "id": "shadow-mage",
+    "name": "Shadow Mage",
+    "max_health": 120,
+    "difficulty": 1.2,
+    "description": "A mage who bends darkness to their will.",
+    "weaknesses": ["light", "disrupt", "silence"]
+  },
+  {
+    "id": "iron-golem",
+    "name": "Iron Golem",
+    "max_health": 150,
+    "difficulty": 1.5,
+    "description": "A lumbering construct of enchanted metal.",
+    "weaknesses": ["rust", "magnet", "acid"]
+  }
+]
