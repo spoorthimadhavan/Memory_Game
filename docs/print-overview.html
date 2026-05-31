@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Memory Words — Project Overview</title>
+  <style>
+    @page { margin: 2cm; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      line-height: 1.55;
+      color: #1a1a2e;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 2.5rem;
+      background: #fff;
+    }
+    h1 { font-size: 2rem; margin: 0 0 0.25rem; color: #311b92; }
+    h2 {
+      font-size: 1.25rem;
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid #7c4dff;
+      color: #311b92;
+      page-break-after: avoid;
+    }
+    h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: #4527a0; }
+    .meta { color: #555; font-size: 0.9rem; margin-bottom: 2rem; }
+    .meta p { margin: 0.2rem 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.75rem 0 1.25rem;
+      font-size: 0.88rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #ede7f6; font-weight: 600; }
+    tr:nth-child(even) td { background: #fafafa; }
+    code {
+      font-family: ui-monospace, monospace;
+      font-size: 0.85em;
+      background: #f3f0f9;
+      padding: 0.1rem 0.35rem;
+      border-radius: 3px;
+    }
+    pre {
+      background: #1a1630;
+      color: #e8eaf6;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.82rem;
+    }
+    ul { padding-left: 1.25rem; }
+    li { margin-bottom: 0.25rem; }
+    .toc { background: #f8f6fc; padding: 1rem 1.25rem; border-radius: 8px; }
+    .toc ol { margin: 0; padding-left: 1.25rem; }
+    .cover-bar {
+      height: 6px;
+      background: linear-gradient(90deg, #311b92, #7c4dff);
+      margin-bottom: 1.5rem;
+      border-radius: 3px;
+    }
+    @media print {
+      body { padding: 0; }
+      h2 { page-break-before: auto; }
+      table, pre { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cover-bar"></div>
+  <h1>Memory Words — Project Overview</h1>
+  <div class="meta">
+    <p><strong>Document:</strong> Technical overview</p>
+    <p><strong>Author:</strong> Spoorthi Satish Madhavan</p>
+    <p><strong>Stack:</strong> Angular 20 · FastAPI · SQLite · Vitest · pytest</p>
+  </div>
+
+  <div class="toc">
+    <strong>Contents</strong>
+    <ol>
+      <li>Executive summary</li>
+      <li>Tech stack</li>
+      <li>Functionalities</li>
+      <li>Game mechanics</li>
+      <li>Routes &amp; API</li>
+      <li>Admin authentication</li>
+      <li>Data storage</li>
+      <li>Run locally</li>
+    </ol>
+  </div>
+
+  <h2>1. Executive summary</h2>
+  <p>
+    <strong>Memory Words</strong> is a full-stack memory game: pick one of <strong>25 categories</strong>,
+    memorize words under time pressure, then find them in a grid with topic-matched distractors.
+  </p>
+  <table>
+    <tr><th>Service</th><th>Local URL</th></tr>
+    <tr><td>Game UI</td><td><code>http://localhost:4200</code></td></tr>
+    <tr><td>API docs</td><td><code>http://localhost:8000/docs</code></td></tr>
+    <tr><td>Admin login</td><td><code>http://localhost:4200/admin/login</code></td></tr>
+  </table>
+
+  <h2>2. Tech stack (26 + auth)</h2>
+
+  <h3>Frontend</h3>
+  <table>
+    <tr><th>Technology</th><th>Used for</th></tr>
+    <tr><td>Angular 20</td><td>Game UI, routing, guides, admin</td></tr>
+    <tr><td>Angular Signals</td><td>Live game state (phase, timer, score)</td></tr>
+    <tr><td>Angular Material</td><td>Toolbar, forms, buttons, icons</td></tr>
+    <tr><td>TypeScript</td><td>Typed models and components</td></tr>
+    <tr><td>RxJS</td><td>HTTP API calls</td></tr>
+    <tr><td>Vitest</td><td>Frontend tests</td></tr>
+  </table>
+
+  <h3>Backend</h3>
+  <table>
+    <tr><th>Technology</th><th>Used for</th></tr>
+    <tr><td>FastAPI</td><td>REST API</td></tr>
+    <tr><td>Pydantic</td><td>Validation</td></tr>
+    <tr><td>Uvicorn</td><td>ASGI server</td></tr>
+    <tr><td>pytest</td><td>Backend tests</td></tr>
+    <tr><td>bcrypt + PyJWT</td><td>Admin password hash &amp; tokens</td></tr>
+  </table>
+
+  <h3>Data</h3>
+  <table>
+    <tr><th>Technology</th><th>Used for</th></tr>
+    <tr><td>SQLite</td><td>Sessions, admin users, reset tokens</td></tr>
+    <tr><td>word_categories.json</td><td>25 topic word banks</td></tr>
+    <tr><td>CSV</td><td>Contact &amp; suggestion forms</td></tr>
+    <tr><td>NumPy / Pandas</td><td>Scoring &amp; tabular data</td></tr>
+  </table>
+
+  <h3>AI / ML &amp; DevOps</h3>
+  <table>
+    <tr><th>Technology</th><th>Used for</th></tr>
+    <tr><td>Cursor, ChatGPT, Claude</td><td>Development &amp; optional LLM</td></tr>
+    <tr><td>LangChain, LangGraph, LangSmith</td><td>Quest AI workflows</td></tr>
+    <tr><td>scikit-learn</td><td>Text similarity (TF-IDF)</td></tr>
+    <tr><td>Docker, GitHub Actions</td><td>Container &amp; CI</td></tr>
+    <tr><td>.env / CORS</td><td>Environment configuration</td></tr>
+  </table>
+
+  <h2>3. Functionalities</h2>
+  <table>
+    <tr><th>Area</th><th>Features</th></tr>
+    <tr><td>Game</td><td>25 categories, memorize/guess phases, levels 5→20 words, scoring, SQLite persistence</td></tr>
+    <tr><td>Public</td><td>About, roadmap, contact, suggestion forms, tech stack panel with quizzes</td></tr>
+    <tr><td>Admin</td><td>Login, forgot/reset password, contact &amp; suggestion inbox, toolbar icon</td></tr>
+    <tr><td>Developer</td><td>Swagger, pytest, Vitest, Docker, GitHub Actions CI</td></tr>
+  </table>
+
+  <h2>4. Game mechanics</h2>
+  <table>
+    <tr><th>Level</th><th>Words</th><th>Memorize time</th></tr>
+    <tr><td>1</td><td>5</td><td>~10 s</td></tr>
+    <tr><td>2</td><td>6</td><td>~10 s</td></tr>
+    <tr><td>10</td><td>14</td><td>~7 s</td></tr>
+    <tr><td>16+</td><td>20 (max)</td><td>~5 s</td></tr>
+  </table>
+
+  <h2>5. Routes &amp; API</h2>
+  <h3>Frontend routes</h3>
+  <table>
+    <tr><th>Route</th><th>Purpose</th></tr>
+    <tr><td><code>/</code></td><td>Game</td></tr>
+    <tr><td><code>/about</code></td><td>Project overview</td></tr>
+    <tr><td><code>/roadmap</code></td><td>Next version</td></tr>
+    <tr><td><code>/contact</code>, <code>/suggestion</code></td><td>Public forms</td></tr>
+    <tr><td><code>/admin/login</code></td><td>Admin sign in</td></tr>
+    <tr><td><code>/admin/contacts</code>, <code>/admin/suggestions</code></td><td>Admin inbox</td></tr>
+  </table>
+
+  <h3>Main API endpoints</h3>
+  <table>
+    <tr><th>Method</th><th>Path</th><th>Description</th></tr>
+    <tr><td>GET</td><td><code>/memory/categories</code></td><td>List topics</td></tr>
+    <tr><td>POST</td><td><code>/memory/start</code></td><td>New session</td></tr>
+    <tr><td>POST</td><td><code>/memory/guess</code></td><td>Submit answers</td></tr>
+    <tr><td>POST</td><td><code>/feedback/contact</code></td><td>Contact form</td></tr>
+    <tr><td>POST</td><td><code>/admin/login</code></td><td>Admin JWT</td></tr>
+    <tr><td>GET</td><td><code>/admin/messages/contact</code></td><td>Inbox (auth)</td></tr>
+  </table>
+
+  <h2>6. Admin authentication</h2>
+  <p>Configure in <code>backend/.env</code>:</p>
+  <ul>
+    <li><code>ADMIN_EMAIL</code> — login email</li>
+    <li><code>ADMIN_PASSWORD</code> — bcrypt-hashed on save</li>
+    <li><code>JWT_SECRET</code> — token signing key</li>
+    <li><code>FRONTEND_URL</code> — reset link base URL</li>
+    <li><code>SMTP_*</code> — optional email for forgot password</li>
+  </ul>
+  <p>Flow: Login → JWT in sessionStorage → Bearer token → protected inbox routes.</p>
+
+  <h2>7. Data storage</h2>
+  <table>
+    <tr><th>Data</th><th>Location</th></tr>
+    <tr><td>Game sessions, admin</td><td><code>backend/data/game.db</code></td></tr>
+    <tr><td>Contact messages</td><td><code>backend/data/contact_messages.csv</code></td></tr>
+    <tr><td>Suggestions</td><td><code>backend/data/suggestions.csv</code></td></tr>
+    <tr><td>Word categories</td><td><code>backend/data/word_categories.json</code></td></tr>
+  </table>
+
+  <h2>8. Run locally</h2>
+  <pre>cd backend && source .venv/bin/activate && uvicorn app.main:app --reload --port 8000
+cd frontend && npm start</pre>
+  <p><em>Memory Words — built with Angular, FastAPI, and SQLite.</em></p>
+</body>
+</html>
