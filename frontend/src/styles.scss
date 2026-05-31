@@ -1,0 +1,65 @@
+@use '@angular/material' as mat;
+
+html {
+  color-scheme: dark;
+
+  @include mat.theme(
+    (
+      color: (
+        theme-type: dark,
+        primary: mat.$azure-palette,
+        tertiary: mat.$orange-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background: #0a0e1a;
+  color: #f2f5ff;
+}
+
+/* High-contrast form fields on dark background */
+.mat-mdc-form-field {
+  --mdc-outlined-text-field-input-text-color: #ffffff;
+  --mdc-outlined-text-field-label-text-color: #e1bee7;
+  --mdc-outlined-text-field-focus-label-text-color: #ce93d8;
+  --mdc-outlined-text-field-outline-color: rgba(255, 255, 255, 0.45);
+  --mdc-outlined-text-field-hover-outline-color: rgba(255, 255, 255, 0.65);
+  --mdc-outlined-text-field-focus-outline-color: #b39ddb;
+  --mdc-outlined-text-field-disabled-input-text-color: rgba(255, 255, 255, 0.45);
+  --mdc-outlined-text-field-disabled-label-text-color: rgba(255, 255, 255, 0.45);
+  --mat-form-field-container-text-color: #ffffff;
+  --mat-select-enabled-trigger-text-color: #ffffff;
+}
+
+.mat-mdc-input-element,
+.mat-mdc-form-field input,
+.mat-mdc-form-field textarea {
+  color: #ffffff !important;
+  caret-color: #b39ddb;
+}
+
+.mat-mdc-form-field .mdc-floating-label,
+.mat-mdc-form-field mat-label {
+  color: #e1bee7 !important;
+}
+
+.mat-mdc-form-field.mat-focused .mdc-floating-label {
+  color: #ce93d8 !important;
+}
+
+.mat-mdc-form-field-error {
+  color: #ffab91 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
